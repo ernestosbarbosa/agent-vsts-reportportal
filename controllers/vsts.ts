@@ -55,7 +55,7 @@ router.post('/witTypes', (req: any, res: Response) => {
     api.getWorkItemTrackingApi().then(witApi => {
         witApi.getWorkItemTypes(project).then(witTypes => {
             res.contentType('application/json').status(200)
-                .send(witTypes);
+                .send(witTypes.filter(x => x.name == "Bug"));
         })
     }, () => {
         errorHandler(res, 409, "witTypes", "getWorkItemTrackingApi")
