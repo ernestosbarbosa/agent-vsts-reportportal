@@ -5,7 +5,7 @@ WORKDIR /var/www
 RUN npm install -g typescript --silent
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3001
 
 RUN npm install
 
