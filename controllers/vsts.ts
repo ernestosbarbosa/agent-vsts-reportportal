@@ -75,7 +75,6 @@ router.post('/wit/:witId', (req: Request, res: Response) => {
 });
 
 router.post('/wit', (req: any, res: Response) => {
-    console.log(req.body)
     connect(req, res);
 
     let areaPath = req.body.ticketRQ.fields[1].value;
@@ -124,7 +123,6 @@ router.post('/wit', (req: any, res: Response) => {
             value: `${tags}`
         }
     ];
-    console.log(workItemFields)
 
     api.getWorkItemTrackingApi().then(witApi => {
         witApi.createWorkItem({}, workItemFields, project, "Bug").then(wit => {
